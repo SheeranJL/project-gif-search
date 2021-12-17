@@ -1,6 +1,53 @@
-.search-bar-container {
+.nav-bar-container {
   display: flex;
-  align-content: center;
-  margin: auto;
-  justify-content: center;
+  border: 10px solid black;
+  justify-content: space-around;
+  margin-bottom: 40px;
+  padding-top: 15px;
+  background-color: purple;
+  margin-top: 5%;
+
+  .title {
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    cursor: pointer;
+    align-self: flex-start;
+  }
+
+  .search-bar {
+    align-self: center;
+  }
+
+  .saved-button {
+    align-self: center;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+
+  .nav-bar-container {
+    flex-direction: column;
+    justify-content: center;
+
+    .title {
+      text-align: center;
+      align-self: center;
+      margin: 5px 0;
+    }
+
+    .search-bar {
+
+    }
+
+    .saved-button {
+      margin: 10px 0;
+    }
+  }
+
 }

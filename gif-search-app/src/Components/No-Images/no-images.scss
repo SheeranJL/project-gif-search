@@ -1,0 +1,12 @@
+.no-images-container {
+  display: flex;
+  height: 100vw;
+  justify-content: center;
+
+  .no-images-desc {
+    text-align: center;
+    align-self: center;
+    margin-bottom: 50%;
+    color: white;
+  }
+}

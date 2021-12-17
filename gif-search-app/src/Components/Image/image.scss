@@ -1,0 +1,42 @@
+.image {
+  align-self: center;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  padding: 5px;
+
+  .gif {
+    align-items: center;
+    justify-content: center;
+    width: auto;
+
+  }
+
+  .save-image-button {
+    position: absolute;
+    border-radius: 5%;
+    display: none;
+    width: auto;
+    align-self: center;
+    text-align: center;
+    border: none;
+    height: 30px;
+    opacity: 0.8;
+    font-size: 24px;
+  }
+
+  &:hover {
+
+    .save-image-button {
+
+      display: block;
+    }
+
+    .gif {
+      opacity: 0.7;
+    }
+
+  }
+
+
+}

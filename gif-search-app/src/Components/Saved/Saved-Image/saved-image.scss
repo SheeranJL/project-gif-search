@@ -1,0 +1,24 @@
+.saved-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid purple;
+
+  .left-side-image {
+    align-content: center;
+    margin-left: 10px;
+
+  }
+
+  .right-side-info {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    color: white;
+    justify-content: center;
+    text-align: center;
+  }
+
+}

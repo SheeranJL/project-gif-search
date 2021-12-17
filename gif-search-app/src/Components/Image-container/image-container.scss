@@ -1,0 +1,30 @@
+.image-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  padding: 5px;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1405px) {
+
+  .image-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+}
+
+@media screen and (max-width: 1000px) {
+
+  .image-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+
+  .image-container {
+    grid-template-columns: 1fr;
+  }
+
+}
