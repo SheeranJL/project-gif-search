@@ -4,13 +4,19 @@ import {appContext} from '../../Context/context.js';
 
 import Image from '../Image/image.js';
 import NoImages from '../No-Images/no-images.js';
+import SearchBar from '../search-bar/search-bar.js';
 
 const ImageContainer = () => {
 
   const {data, loading} = useContext(appContext);
 
   return (
-    <div>
+    <div className='image-page-container'>
+
+      <div className='search-bar-comtainer'>
+        <SearchBar />
+      </div>
+
     {
       data.loading
       ?

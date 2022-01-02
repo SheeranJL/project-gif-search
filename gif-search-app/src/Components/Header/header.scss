@@ -1,0 +1,87 @@
+.nav-bar-container {
+  display: flex;
+  justify-content: space-around;
+  height: 50px;
+  background-color: rgba(37, 41, 88, 0.7);
+
+  .title {
+    display: flex;
+    align-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    height: 100%;
+    width: 200px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .login-out-buttons {
+    align-self: center;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    height: 100%;
+    width: 15%;
+    margin-left: auto;
+    align-items: center;
+    justify-content: flex-end;
+    display: flex;
+    cursor: pointer;
+
+    span, a {
+      width: 100px;
+      height: 100%;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 0;
+      text-decoration: none;
+      color: white;
+    }
+
+    .logout {
+      background-color: rgba(255, 0, 0, 1);
+
+      &:hover {
+        background-color: rgba(255, 0, 0, 0.8);
+      }
+    }
+
+    .saved {
+      background-color: rgba(11, 127, 171, 1);
+
+      &:hover {
+        background-color: rgba(11, 127, 171, 0.8);
+      }
+    }
+
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+
+  .nav-bar-container {
+    flex-direction: column;
+    justify-content: center;
+
+    .title {
+      text-align: center;
+      align-self: center;
+      margin: 5px 0;
+    }
+
+    .search-bar {
+
+    }
+
+    .login-out-buttons {
+      margin: 10px 0;
+    }
+  }
+
+}

@@ -1,0 +1,23 @@
+.search-bar {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-top: 5%;
+  width: 100%;
+
+  .input-field {
+    width: 800px;
+    height: 40px;
+    text-align: center;
+    font-size: 30px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    border-bottom: 2px solid white;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

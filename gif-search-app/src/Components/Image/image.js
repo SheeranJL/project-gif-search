@@ -23,7 +23,10 @@ const Image = (props) => {
   return (
     <div className='image'>
       <img className='gif' src={props.data.images.fixed_width.webp}/>
-      <button onClick={handleSaveImage} className='save-image-button'>Save</button>
+      {
+        data.currentUser ? <button onClick={handleSaveImage} className='save-image-button'>Save</button> : null
+      }
+
     </div>
   )
 }

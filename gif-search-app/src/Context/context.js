@@ -13,6 +13,7 @@ export const Provider = (props) => {
   const [test, setTest] = ('');
   const [saved, setSaved] = useState([]);
   const [location, setLocation] = useState('/');
+  const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
     const fetchData = async() => {
@@ -38,8 +39,8 @@ export const Provider = (props) => {
 
   return (
     <appContext.Provider value={{
-      data: {gifs, search, loading, saved, location},
-      actions: {updateSearch, setTest, setSaved, setLocation},
+      data: {gifs, search, loading, saved, location, currentUser},
+      actions: {updateSearch, setTest, setSaved, setLocation, setCurrentUser},
     }}>
       {props.children}
     </appContext.Provider>
