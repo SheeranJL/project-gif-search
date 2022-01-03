@@ -9,8 +9,17 @@ $base-text-color: white;
   align-items: center;
   height: 100%;
 
+  .incorrect-login {
+    color: red;
+  }
+
+  .hidden {
+    display: none;
+  }
+
   h3 {
     color: $base-text-color;
+    padding-bottom: 25px;
   }
 
   .login-form {
@@ -20,9 +29,17 @@ $base-text-color: white;
     align-items: center;
     color: $base-text-color;
 
+    .no-match {
+      color: red;
+    }
+
+    .valid {
+      color: green;
+    }
+
     input {
       margin-bottom: 40px;
-      width: 100%;
+      width: 90%;
       height: 30px;
       padding: 0;
       font-size: 24px;
@@ -32,13 +49,13 @@ $base-text-color: white;
       border-left: none;
       border-right: none;
       color: white;
+      text-align: center;
 
       &:focus {
         outline: none;
         border-bottom: 4px solid red;
 
       }
-
 
     }
 
@@ -51,7 +68,7 @@ $base-text-color: white;
     cursor: pointer;
     font-weight: bold;
     color: rgba(255, 255, 0, 1);
-    margin-top: 10px;
+    margin-top: 25px;
 
     &:hover {
       color: rgba(255, 255, 0, 0.5);

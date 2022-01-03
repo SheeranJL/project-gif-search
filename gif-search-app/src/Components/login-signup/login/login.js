@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import {useHistory} from 'react-router-dom';
 import './login.scss';
 import CustomButton from '../../Buttons/buttons.js';
@@ -11,6 +11,7 @@ const Login = ({toggleMethod, currentMethod}) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const history = useHistory();
+  const [incorrectLogin, setIncorrectLogin] = useState(false);
 
   const handleChange = (e) => {
     if (e.target.name === 'email') {
@@ -27,10 +28,11 @@ const Login = ({toggleMethod, currentMethod}) => {
       await auth.signInWithEmailAndPassword(email, password);
       setEmail('');
       setPassword('');
+      setIncorrectLogin(false);
       history.push('/');
-      console.log('test')
     } catch(error) {
       console.log('error signing in w/ u/p', error)
+      setIncorrectLogin(true);
     }
   }
 
@@ -62,6 +64,8 @@ const Login = ({toggleMethod, currentMethod}) => {
           <CustomButton>Sign in</CustomButton>
           <CustomButton tyoe='button' isGoogleButton onClick={redirectAfterGoogleAuth}>Google</CustomButton>
         </div>
+
+        <p className={incorrectLogin ? 'incorrect-login' : 'hidden'}>Incorrect login</p>
 
         <span className='toggle-method' onClick={() => toggleMethod(!currentMethod)}> Don't have an account? Create one! </span>
 

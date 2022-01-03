@@ -16,7 +16,7 @@ const SavedImage = ({data}) => {
     <div className='saved-image-container'>
 
       <div className='image-saved'>
-        <img  src={data.images.downsized_medium.url}/>
+        <img className='actual-saved-image' src={data.images.downsized_medium.url}/>
         <button className='remove-button' onClick={handleRemove} >Remove</button>
       </div>
 
