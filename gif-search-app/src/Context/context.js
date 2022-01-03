@@ -39,10 +39,15 @@ export const Provider = (props) => {
       saveDataToFirebase(currentUser.id, saved);
     }
 
-
     fetchData(search)
   }, [search, saved])
 
+
+  const removeItemFromSaved = (item) => {
+    console.log(item);
+    const filteredList = saved.filter(i => i.id !== item)
+    setSaved([...filteredList])
+  }
 
   const updateSearch = (value) => {
     setSearch(value)
@@ -52,7 +57,7 @@ export const Provider = (props) => {
   return (
     <appContext.Provider value={{
       data: {gifs, search, loading, saved, location, currentUser, isFirstRender},
-      actions: {updateSearch, setTest, setSaved, setLocation, setCurrentUser},
+      actions: {updateSearch, setTest, setSaved, setLocation, setCurrentUser, removeItemFromSaved},
     }}>
       {props.children}
     </appContext.Provider>
