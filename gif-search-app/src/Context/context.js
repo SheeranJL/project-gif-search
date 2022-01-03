@@ -15,7 +15,7 @@ export const Provider = (props) => {
   const [saved, setSaved] = useState([]);
   const [location, setLocation] = useState('/');
   const [currentUser, setCurrentUser] = useState(null);
-  const isFirstRender = useRef(true)
+  const [isFirstRender, setIsFirstRender] = useState(true);
 
   useEffect(() => {
 
@@ -27,9 +27,11 @@ export const Provider = (props) => {
       if (data.data.length) {
         await setGifs(data.data);
         await setLoading(false);
+        setIsFirstRender(false);
       } else {
         setGifs([])
         await setLoading(true);
+
       }
 
     }
@@ -57,7 +59,7 @@ export const Provider = (props) => {
   return (
     <appContext.Provider value={{
       data: {gifs, search, loading, saved, location, currentUser, isFirstRender},
-      actions: {updateSearch, setTest, setSaved, setLocation, setCurrentUser, removeItemFromSaved},
+      actions: {updateSearch, setTest, setSaved, setLocation, setCurrentUser, removeItemFromSaved, setIsFirstRender, setSearch},
     }}>
       {props.children}
     </appContext.Provider>

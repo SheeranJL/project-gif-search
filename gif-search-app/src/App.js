@@ -42,14 +42,19 @@ function App() {
           const firestoreData = await onLoginData(userAuth.uid);
           const response = await firestoreData;
           console.log(response)
-          const data = await response.data.map(item => item);
-          await actions.setSaved([...data]);
+          if (response.data.length) {
+            const data = await response.data.map(item => item);
+            await actions.setSaved([...data]);
+          } else {
+            return
+          }
+
         }
         getDataFromFirestore();
       }
 
       actions.setCurrentUser(userAuth);
-      data.isFirstRender.current = false;
+      actions.setIsFirstRender(false);
     })
 
 

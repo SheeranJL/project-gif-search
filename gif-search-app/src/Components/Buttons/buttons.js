@@ -5,7 +5,7 @@ const CustomButton = ({children, isGoogleButton, onClick, ...rest}) => {
 
 
   return (
-    <button onClick={onClick} className={`${isGoogleButton ? 'custom-button google' : ''} custom-button`}>
+    <button onClick={onClick} type={isGoogleButton ? 'button' : ''} className={`${isGoogleButton ? 'custom-button google' : ''} custom-button`}>
       {children}
     </button>
   )

@@ -62,7 +62,7 @@ const Login = ({toggleMethod, currentMethod}) => {
 
         <div className='sign-in-buttons'>
           <CustomButton>Sign in</CustomButton>
-          <CustomButton tyoe='button' isGoogleButton onClick={redirectAfterGoogleAuth}>Google</CustomButton>
+          <CustomButton isGoogleButton onClick={redirectAfterGoogleAuth}>Google</CustomButton>
         </div>
 
         <p className={incorrectLogin ? 'incorrect-login' : 'hidden'}>Incorrect login</p>

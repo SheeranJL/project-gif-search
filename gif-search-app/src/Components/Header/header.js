@@ -24,7 +24,10 @@ const Header = () => {
   return (
     <div className='nav-bar-container'>
 
-      <div onClick={() => history.push('/')} className='title'>
+      <div onClick={() => {
+        history.push('/')
+        actions.setSearch('cats')
+      }} className='title'>
         <span>Gif Search</span>
       </div>
 
@@ -35,7 +38,7 @@ const Header = () => {
 
 
       <div className='login-out-buttons'>
-          <Link className='saved' to='/'>Home</Link>
+          <Link className='saved' to='/' onClick={() => actions.setSearch('cats')} >Home</Link>
           <Link className='saved' to='/saved'>Saved</Link>
           {
             currentUser
