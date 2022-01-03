@@ -15,6 +15,12 @@ const Header = () => {
   useEffect( () => {
   }, [newLocation])
 
+  const handleSignout = async() => {
+    await auth.signOut();
+    await actions.setSaved([]);
+  }
+
+
   return (
     <div className='nav-bar-container'>
 
@@ -23,22 +29,21 @@ const Header = () => {
       </div>
 
       <div className='login-out-buttons'>
-        {
-          currentUser
-          ? (
-            <>
-            {
-              history.location.pathname === '/'
-              ? <Link className='saved' to='/saved'>Saved</Link>
-              : <Link className='saved' to='/'>Home</Link>
-            }
-            <span className='logout' onClick={() => auth.signOut()}>Signout</span>
-            </>
-          )
-          : <Link className='saved' to='/login'>Login</Link>
-        }
+
 
       </div>
+
+
+      <div className='login-out-buttons'>
+          <Link className='saved' to='/'>Home</Link>
+          <Link className='saved' to='/saved'>Saved</Link>
+          {
+            currentUser
+            ? <span className='logout' onClick={handleSignout}>Signout</span>
+            : <Link className='saved' to='/login'>Login</Link>
+          }
+      </div>
+
 
     </div>
   )

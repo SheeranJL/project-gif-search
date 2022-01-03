@@ -14,15 +14,16 @@
 
   .save-image-button {
     position: absolute;
-    border-radius: 5%;
     display: none;
-    width: auto;
+    width: 200px;
     align-self: center;
     text-align: center;
     border: none;
     height: 30px;
     opacity: 0.8;
     font-size: 24px;
+    cursor: pointer;
+    padding: 0;
   }
 
   &:hover {

@@ -2,7 +2,10 @@
   display: flex;
   justify-content: space-around;
   height: 50px;
-  background-color: rgba(37, 41, 88, 0.7);
+  background-color: rgba(37, 41, 88, 1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 
   .title {
     display: flex;
@@ -24,7 +27,7 @@
     color: white;
     display: flex;
     height: 100%;
-    width: 15%;
+    width: 250px;
     margin-left: auto;
     align-items: center;
     justify-content: flex-end;
@@ -32,7 +35,7 @@
     cursor: pointer;
 
     span, a {
-      width: 100px;
+      width: 300px;
       height: 100%;
       text-align: center;
       display: flex;
@@ -44,7 +47,7 @@
     }
 
     .logout {
-      background-color: rgba(255, 0, 0, 1);
+      background-color: rgba(37, 41, 88, 0.7);
 
       &:hover {
         background-color: rgba(255, 0, 0, 0.8);
@@ -52,7 +55,8 @@
     }
 
     .saved {
-      background-color: rgba(11, 127, 171, 1);
+      background-color: rgba(37, 41, 88, 0.7);
+      margin-left: 2px;
 
       &:hover {
         background-color: rgba(11, 127, 171, 0.8);

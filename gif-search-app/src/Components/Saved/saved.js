@@ -15,7 +15,7 @@ const SavedPage = () => {
       {
         data.saved.length
         ? data.saved.map((image, index) => <SavedImage data={image} key={image.id} />)
-        : <NoImages message='Images you save will show here' />
+        : <NoImages />
       }
     </div>
   )

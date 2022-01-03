@@ -1,6 +1,6 @@
 import './App.scss';
 import React, {useEffect, useState, useContext} from 'react';
-import {auth, createUserProfileDocument} from './firebase/firebase.js';
+import {auth, createUserProfileDocument, onLoginData} from './firebase/firebase.js';
 import {appContext} from './Context/context.js';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
@@ -25,20 +25,33 @@ function App() {
         const userRef = await createUserProfileDocument(userAuth, data.saved);
 
         console.log(userAuth);
-
-        userRef.onSnapshot(snapShot => {
-          actions.setCurrentUser({
-            id: snapShot.id,
-            ...snapShot.data,
-            userData: {
-              displayName: userAuth.displayName,
-              email: userAuth.email,
-            }
+        if (data.isFirstRender) {
+          userRef.onSnapshot(snapShot => {
+            actions.setCurrentUser({
+              id: snapShot.id,
+              ...snapShot.data,
+              userData: {
+                displayName: userAuth.displayName,
+                email: userAuth.email,
+              }
+            })
           })
-        })
+        }
+
+        const getDataFromFirestore = async() => {
+          const firestoreData = await onLoginData(userAuth.uid);
+          const response = await firestoreData;
+          console.log(response)
+          const data = await response.data.map(item => item);
+          await actions.setSaved([...data]);
+        }
+        getDataFromFirestore();
       }
+
       actions.setCurrentUser(userAuth);
+      data.isFirstRender.current = false;
     })
+
 
 
   }, [])

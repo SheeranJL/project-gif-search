@@ -1,6 +1,8 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import 'firebase/compat/auth';
+import 'firebase/compat/analytics';
+import { getDatabase, ref, set } from "firebase/database";
 
 const config = {
   apiKey: "AIzaSyAlx7NLSfWvOYIUsT1YSIICW3s17BS3oZI",
@@ -44,8 +46,37 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     }
   }
   return userRef;
-}
+};
 
+export const onLoginData = async(userAuth) => {
+
+  const dataRef = await firestore.collection(`users`).doc(userAuth);
+  const data = await dataRef.get();
+
+  if (!data.exists) {
+    console.log('no data for user')
+  } else {
+    console.log(data.data())
+    return data.data();
+  }
+};
+
+
+export const saveDataToFirebase = async (userAuth, data) => {
+
+  const userRef = firestore.doc(`users/${userAuth}`);
+  const collectionRef = firestore.collection(`users/${userAuth}/data`);
+  const userData = firestore.collection('users').doc(userAuth);
+
+  try {
+    await userData.update({
+      data
+    })
+  } catch(error) {
+    console.log('Error saving data', error)
+  }
+
+};
 
 
 
@@ -55,6 +86,7 @@ firebase.initializeApp(config);
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
+const analytics = firebase.analytics();
 
 //Google sign in//
 const provider = new firebase.auth.GoogleAuthProvider();
