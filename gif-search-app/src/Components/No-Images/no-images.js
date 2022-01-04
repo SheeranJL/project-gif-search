@@ -12,7 +12,7 @@ const NoImages = () => {
 
       {
         data.saved.length === 0 && data.currentUser !== null
-        ? <h2 className='no-images-desc'>Images you add will show here</h2>
+        ? <h2 className='no-images-desc'>Images you save will show here</h2>
         : <h2 className='no-images-desc'>Please <Link className='direct-to-login' to='/login'>Login</Link> to save images</h2>
       }
 

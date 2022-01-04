@@ -4,6 +4,9 @@
   flex-direction: column;
   justify-content: center;
   background-image: url('../../background-images/background-gif-app.png');
+  background-repeat: repeat;
+  background-size: cover;
+  min-height: 100%;
 
   .search-bar-comtainer {
     align-self: center;
