@@ -3,7 +3,7 @@
   height: 96vh;
   margin-top: 0;
   top: 0;
-  background-image: url('../../background-images/background-gif-app.png');
+  //background-image: url('../../background-images/background-gif-app.png');
   background-size: cover;
 
   &::-webkit-scrollbar {
@@ -24,4 +24,15 @@
   background: red;
   }
 
+}
+
+@media screen and (max-width: 450px) {
+  .saved-page-container {
+    .no-images-container {
+      .no-images-desc {
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+    }
+  }
 }

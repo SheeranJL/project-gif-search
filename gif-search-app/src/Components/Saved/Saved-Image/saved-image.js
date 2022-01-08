@@ -7,6 +7,7 @@ const SavedImage = ({data}) => {
 
   const {actions} = useContext(appContext);
 
+  //if a user click on 'remove', this function will call the removeItemFromSaved function from context which will attempt to remove the saved image from the users saved images and further, remove it from firestore.
   const handleRemove = () => {
     actions.removeItemFromSaved(data.id);
   }

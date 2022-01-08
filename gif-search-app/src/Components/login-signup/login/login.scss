@@ -8,6 +8,7 @@ $base-text-color: white;
   margin-right: auto;
   align-items: center;
   height: 100%;
+  margin-top: 15px;
 
   .incorrect-login {
     color: red;
@@ -21,6 +22,7 @@ $base-text-color: white;
     color: $base-text-color;
     padding-bottom: 25px;
     font-size: 25px;
+    text-align: center;
   }
 
   .login-form {

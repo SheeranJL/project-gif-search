@@ -9,12 +9,10 @@ const Header = () => {
 
   const {data: {search, location, saved, currentUser}, actions} = useContext(appContext);
 
-  let history = useHistory();
   const newLocation = useLocation();
+  const history = useHistory();
 
-  useEffect( () => {
-  }, [newLocation])
-
+  //On sign-out this function will call the signOut function from firebase auth library then clear the saved photos from local state//
   const handleSignout = async() => {
     await auth.signOut();
     await actions.setSaved([]);

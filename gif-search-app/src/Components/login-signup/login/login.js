@@ -8,11 +8,14 @@ import {auth} from '../../../firebase/firebase.js';
 
 const Login = ({toggleMethod, currentMethod}) => {
 
+  //Local state for fields//
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const history = useHistory();
   const [incorrectLogin, setIncorrectLogin] = useState(false);
 
+
+  //On field input change this function will populate the local state above with the respective field values//
   const handleChange = (e) => {
     if (e.target.name === 'email') {
       setEmail(e.target.value)
@@ -21,9 +24,11 @@ const Login = ({toggleMethod, currentMethod}) => {
     }
   }
 
+
+  //When a user clicks sign-in with an existing account, we will fire the signInWithEmailAndPassword utility from firebase auth, if successful, the user is pushed back to the home page.
+  //If the login in incorrect, we set the incorrectLogin state boolean value to true which then displays an 'incorrect login' prompt
   const handleSubmit = async(e) => {
     e.preventDefault();
-
     try {
       await auth.signInWithEmailAndPassword(email, password);
       setEmail('');
@@ -36,17 +41,18 @@ const Login = ({toggleMethod, currentMethod}) => {
     }
   }
 
-  const redirectAfterGoogleAuth = async() => {
 
+  //if a user decided to authenticate with google, we execute the signInWithGoogle utility from firebase auth then push the user to the home page.
+  const redirectAfterGoogleAuth = async() => {
     try {
       await signInWithGoogle();
       history.push('/')
-
     } catch(error) {
       console.log('error signing in with google')
     }
-
   }
+
+
 
   return (
     <div className='login-container'>
@@ -66,7 +72,6 @@ const Login = ({toggleMethod, currentMethod}) => {
         </div>
 
         <p className={incorrectLogin ? 'incorrect-login' : 'hidden'}>Incorrect login</p>
-
         <span className='toggle-method' onClick={() => toggleMethod(!currentMethod)}> Don't have an account? Create one! </span>
 
       </form>

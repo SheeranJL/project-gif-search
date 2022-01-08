@@ -15,7 +15,6 @@ function App() {
 
   const {data, actions} = useContext(appContext);
 
-
   let unsubscribeFromAuth = null;
 
   useEffect(() => {
@@ -24,7 +23,6 @@ function App() {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth, data.saved);
 
-        console.log(userAuth);
         if (data.isFirstRender) {
           userRef.onSnapshot(snapShot => {
             actions.setCurrentUser({
@@ -52,13 +50,9 @@ function App() {
         }
         getDataFromFirestore();
       }
-
       actions.setCurrentUser(userAuth);
       actions.setIsFirstRender(false);
     })
-
-
-
   }, [])
 
   return (

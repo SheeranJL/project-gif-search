@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
-import '../login/login.scss';
+import './signup.scss';
 import {auth, createUserProfileDocument} from '../../../firebase/firebase.js';
 
 import CustomButton from '../../Buttons/buttons.js';
 
 const SignUp = ({toggleMethod, currentMethod}) => {
 
+  //Local state variables//
   const [displayName, setDisplayName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -15,6 +16,7 @@ const SignUp = ({toggleMethod, currentMethod}) => {
 
   const history = useHistory();
 
+  //On field input change this function will populate the local state above with the respective field values//
   const handleChange = (e) => {
     if (e.target.name === 'displayName') {
       setDisplayName(e.target.value)
@@ -27,11 +29,12 @@ const SignUp = ({toggleMethod, currentMethod}) => {
     }
   }
 
-
+  //On form submission we take the values of each field and run them through the createUserWithEmailAndPassword function from our firebase utilities. This will then create an account in firestore which will allow the user to sign in.
   const handleSubmit = async (e) => {
     console.log(email, password)
     e.preventDefault();
 
+    //If 'password', and 'confirmed password' fields don't match, then display an error stating so
     if (password !== confirmedPassword) {
       setPasswordMatch(false);
       return
@@ -54,7 +57,7 @@ const SignUp = ({toggleMethod, currentMethod}) => {
 
 
   return (
-    <div className='login-container'>
+    <div className='signup-container'>
       <h3 >Create a new account</h3>
 
       <form className='login-form' onSubmit={handleSubmit}>
