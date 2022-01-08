@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/project-gif-search/static/css/main.26bd62e1.chunk.css",
-    "main.js": "/project-gif-search/static/js/main.caed11bb.chunk.js",
-    "main.js.map": "/project-gif-search/static/js/main.caed11bb.chunk.js.map",
-    "runtime-main.js": "/project-gif-search/static/js/runtime-main.eb504d25.js",
-    "runtime-main.js.map": "/project-gif-search/static/js/runtime-main.eb504d25.js.map",
-    "static/js/2.683d2a98.chunk.js": "/project-gif-search/static/js/2.683d2a98.chunk.js",
-    "static/js/2.683d2a98.chunk.js.map": "/project-gif-search/static/js/2.683d2a98.chunk.js.map",
-    "static/js/3.7a032a5b.chunk.js": "/project-gif-search/static/js/3.7a032a5b.chunk.js",
-    "static/js/3.7a032a5b.chunk.js.map": "/project-gif-search/static/js/3.7a032a5b.chunk.js.map",
+    "main.css": "/project-gif-search/static/css/main.6d83fe12.chunk.css",
+    "main.js": "/project-gif-search/static/js/main.7869b725.chunk.js",
+    "main.js.map": "/project-gif-search/static/js/main.7869b725.chunk.js.map",
+    "runtime-main.js": "/project-gif-search/static/js/runtime-main.202a60fe.js",
+    "runtime-main.js.map": "/project-gif-search/static/js/runtime-main.202a60fe.js.map",
+    "static/js/2.a80334b8.chunk.js": "/project-gif-search/static/js/2.a80334b8.chunk.js",
+    "static/js/2.a80334b8.chunk.js.map": "/project-gif-search/static/js/2.a80334b8.chunk.js.map",
+    "static/js/3.dc9be778.chunk.js": "/project-gif-search/static/js/3.dc9be778.chunk.js",
+    "static/js/3.dc9be778.chunk.js.map": "/project-gif-search/static/js/3.dc9be778.chunk.js.map",
     "index.html": "/project-gif-search/index.html",
-    "static/css/main.26bd62e1.chunk.css.map": "/project-gif-search/static/css/main.26bd62e1.chunk.css.map",
-    "static/js/2.683d2a98.chunk.js.LICENSE.txt": "/project-gif-search/static/js/2.683d2a98.chunk.js.LICENSE.txt",
-    "static/media/image-container.scss": "/project-gif-search/static/media/background-gif-app.7dd0149e.png"
+    "static/css/main.6d83fe12.chunk.css.map": "/project-gif-search/static/css/main.6d83fe12.chunk.css.map",
+    "static/js/2.a80334b8.chunk.js.LICENSE.txt": "/project-gif-search/static/js/2.a80334b8.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/project-gif-search/static/media/background-gif-app.7dd0149e.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.eb504d25.js",
-    "static/js/2.683d2a98.chunk.js",
-    "static/css/main.26bd62e1.chunk.css",
-    "static/js/main.caed11bb.chunk.js"
+    "static/js/runtime-main.202a60fe.js",
+    "static/js/2.a80334b8.chunk.js",
+    "static/css/main.6d83fe12.chunk.css",
+    "static/js/main.7869b725.chunk.js"
   ]
 }
